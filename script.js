@@ -1,0 +1,3 @@
+function add(name,price){let c=JSON.parse(localStorage.getItem('cart')||'[]');c.push({name,price});localStorage.setItem('cart',JSON.stringify(c));alert('Added');}
+if(document.getElementById('cart')){let c=JSON.parse(localStorage.getItem('cart')||'[]');document.getElementById('cart').innerHTML=c.map(x=>'<li>'+x.name+' - $'+x.price+'</li>').join('');}
+function checkout(){alert('Order submitted successfully');localStorage.removeItem('cart');}
