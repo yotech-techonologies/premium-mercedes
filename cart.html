@@ -1,4 +1,96 @@
-<!DOCTYPE html><html><head><title>Cart</title><link rel='stylesheet' href='style.css'></head><body><nav><a href='index.html'>Home</a><a href='inventory.html'>Inventory</a><a href='about.html'>About</a><a href='contact.html'>Contact</a><a href='cart.html'>Cart</a></nav><h1>Cart & Checkout</h1><ul id='cart'></ul><button onclick='checkout()'>Checkout</button><script src='script.js'></script></body></html>
-<a href="checkout.html" class="btn">
-    Proceed to Checkout
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    margin:0;
+}
+
+nav{
+    background:#000;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 15px;
+}
+
+.container{
+    max-width:700px;
+    margin:40px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+img{
+    width:100%;
+    max-height:300px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+button{
+    background:gold;
+    border:none;
+    padding:15px;
+    width:100%;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="inventory.html">Inventory</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="cart.html">Cart</a>
+</nav>
+
+<div class="container">
+
+<h1>Your Cart</h1>
+
+<div id="cart"></div>
+
+<br>
+
+<a href="checkout.html">
+<button>Proceed to Checkout</button>
 </a>
+
+</div>
+
+<script>
+const car = JSON.parse(localStorage.getItem("cart"));
+
+if(car){
+    document.getElementById("cart").innerHTML = `
+        <img src="${car.image}">
+        <h2>${car.name}</h2>
+        <h3>$${car.price}</h3>
+    `;
+}else{
+    document.getElementById("cart").innerHTML =
+    "<h2>Your cart is empty.</h2>";
+}
+</script>
+
+</body>
+</html>
