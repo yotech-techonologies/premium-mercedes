@@ -28,7 +28,7 @@ nav{
 }
 
 nav a{
-    color:#fff;
+    color:white;
     text-decoration:none;
     margin:0 15px;
     font-weight:bold;
@@ -141,30 +141,9 @@ section{
     margin-bottom:20px;
 }
 
-.checkout{
-    background:white;
-}
-
-form{
-    max-width:600px;
-    margin:auto;
-}
-
-input, textarea, select{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-}
-
-.pay-btn{
+.buy-btn:hover{
     background:gold;
     color:black;
-    border:none;
-    padding:15px;
-    width:100%;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
 }
 </style>
 </head>
@@ -172,11 +151,11 @@ input, textarea, select{
 <body>
 
 <nav>
-    <a href="#">Home</a>
-    <a href="#">Inventory</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Cart</a>
+    <a href="index.html">Home</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
 </nav>
 
 <header class="hero">
@@ -194,14 +173,13 @@ input, textarea, select{
     <h1>Mercedes-Benz Premium Dealership</h1>
 
     <p>
-        Experience luxury, elegance and performance like never before.
-        Discover our exclusive Mercedes-Benz collection designed for
-        comfort, prestige and world-class driving pleasure.
+        Experience luxury, innovation, performance, and elegance with our
+        exclusive collection of Mercedes-Benz vehicles.
     </p>
 
     <p>
-        From the refined C-Class to the powerful GLE SUV and iconic
-        G-Class, your dream Mercedes awaits.
+        Browse our premium inventory and discover the perfect Mercedes
+        designed to elevate every journey.
     </p>
 
     <a href="#cars" class="btn">Explore Inventory</a>
@@ -218,80 +196,45 @@ input, textarea, select{
             <img src="images/car1.jpg">
             <h3>C-Class</h3>
             <p>$35,000</p>
-            <a href="#checkout" class="buy-btn">Buy Now</a>
+            <a href="cart.html" class="buy-btn">Buy Now</a>
         </div>
 
         <div class="card">
             <img src="images/car2.jpg">
             <h3>E-Class</h3>
             <p>$52,000</p>
-            <a href="#checkout" class="buy-btn">Buy Now</a>
+            <a href="cart.html" class="buy-btn">Buy Now</a>
         </div>
 
         <div class="card">
             <img src="images/car3.jpg">
             <h3>GLE</h3>
             <p>$70,000</p>
-            <a href="#checkout" class="buy-btn">Buy Now</a>
+            <a href="cart.html" class="buy-btn">Buy Now</a>
         </div>
 
         <div class="card">
             <img src="images/car4.jpg">
             <h3>S-Class</h3>
             <p>$95,000</p>
-            <a href="#checkout" class="buy-btn">Buy Now</a>
+            <a href="cart.html" class="buy-btn">Buy Now</a>
         </div>
 
         <div class="card">
             <img src="images/car5.jpg">
             <h3>G-Class</h3>
             <p>$140,000</p>
-            <a href="#checkout" class="buy-btn">Buy Now</a>
+            <a href="cart.html" class="buy-btn">Buy Now</a>
         </div>
 
         <div class="card">
             <img src="images/car6.jpg">
             <h3>AMG GT</h3>
             <p>$160,000</p>
-            <a href="#checkout" class="buy-btn">Buy Now</a>
+            <a href="cart.html" class="buy-btn">Buy Now</a>
         </div>
 
     </div>
-</section>
-
-<section id="checkout" class="checkout">
-    <h2>Checkout</h2>
-
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="ghereyoma@gmail.com">
-        <input type="hidden" name="currency_code" value="USD">
-
-        <input type="text" name="customer_name" placeholder="Full Name" required>
-
-        <input type="email" name="customer_email" placeholder="Email Address" required>
-
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-
-        <textarea name="address" placeholder="Delivery Address"></textarea>
-
-        <select name="item_name">
-            <option>Mercedes C-Class - $35,000</option>
-            <option>Mercedes E-Class - $52,000</option>
-            <option>Mercedes GLE - $70,000</option>
-            <option>Mercedes S-Class - $95,000</option>
-            <option>Mercedes G-Class - $140,000</option>
-            <option>Mercedes AMG GT - $160,000</option>
-        </select>
-
-        <input type="number" name="amount" placeholder="Amount">
-
-        <button type="submit" class="pay-btn">
-            Pay with PayPal
-        </button>
-
-    </form>
 </section>
 
 <script>
@@ -299,9 +242,9 @@ let slides=document.querySelectorAll('.slide');
 let current=0;
 
 setInterval(()=>{
-slides[current].classList.remove('active');
-current=(current+1)%slides.length;
-slides[current].classList.add('active');
+    slides[current].classList.remove('active');
+    current=(current+1)%slides.length;
+    slides[current].classList.add('active');
 },3000);
 </script>
 
