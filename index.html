@@ -10,7 +10,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -28,7 +28,7 @@ nav{
 }
 
 nav a{
-    color:white;
+    color:#fff;
     text-decoration:none;
     margin:0 15px;
     font-weight:bold;
@@ -56,7 +56,7 @@ nav a:hover{
     height:100%;
     object-fit:cover;
     opacity:0;
-    transition:opacity 1s ease-in-out;
+    transition:1s;
 }
 
 .slide.active{
@@ -67,7 +67,7 @@ nav a:hover{
     position:relative;
     z-index:2;
     height:100%;
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,.5);
     color:white;
     display:flex;
     flex-direction:column;
@@ -84,22 +84,17 @@ nav a:hover{
 
 .hero-content p{
     max-width:800px;
-    font-size:1.2rem;
     line-height:1.8;
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 
 .btn{
     background:gold;
     color:black;
-    padding:15px 35px;
+    padding:15px 30px;
     text-decoration:none;
-    font-weight:bold;
     border-radius:5px;
-}
-
-.btn:hover{
-    background:white;
+    font-weight:bold;
 }
 
 section{
@@ -118,7 +113,7 @@ section{
     background:white;
     border-radius:10px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 .card img{
@@ -132,9 +127,44 @@ section{
 }
 
 .card p{
-    color:#444;
-    margin-bottom:20px;
+    margin-bottom:15px;
     font-weight:bold;
+}
+
+.buy-btn{
+    display:inline-block;
+    background:black;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+    margin-bottom:20px;
+}
+
+.checkout{
+    background:white;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input, textarea, select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+}
+
+.pay-btn{
+    background:gold;
+    color:black;
+    border:none;
+    padding:15px;
+    width:100%;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
 </style>
 </head>
@@ -142,45 +172,45 @@ section{
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="inventory.html">Inventory</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart</a>
+    <a href="#">Home</a>
+    <a href="#">Inventory</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Cart</a>
 </nav>
 
 <header class="hero">
 
-    <div class="slider">
-        <img src="images/car1.jpg" class="slide active">
-        <img src="images/car2.jpg" class="slide">
-        <img src="images/car3.jpg" class="slide">
-        <img src="images/car4.jpg" class="slide">
-    </div>
+<div class="slider">
+    <img src="images/car1.jpg" class="slide active">
+    <img src="images/car2.jpg" class="slide">
+    <img src="images/car3.jpg" class="slide">
+    <img src="images/car4.jpg" class="slide">
+    <img src="images/car5.jpg" class="slide">
+    <img src="images/car6.jpg" class="slide">
+</div>
 
-    <div class="hero-content">
-        <h1>Mercedes-Benz Premium Dealership</h1>
+<div class="hero-content">
+    <h1>Mercedes-Benz Premium Dealership</h1>
 
-        <p>
-            Welcome to the ultimate destination for luxury and performance.
-            Explore our handpicked collection of world-class Mercedes-Benz
-            vehicles crafted with elegance, innovation, comfort, and unmatched
-            engineering excellence.
-        </p>
+    <p>
+        Experience luxury, elegance and performance like never before.
+        Discover our exclusive Mercedes-Benz collection designed for
+        comfort, prestige and world-class driving pleasure.
+    </p>
 
-        <p>
-            Whether you desire the refined C-Class, the executive E-Class,
-            or the powerful GLE SUV, we offer premium vehicles designed to
-            transform every journey into an unforgettable experience.
-        </p>
+    <p>
+        From the refined C-Class to the powerful GLE SUV and iconic
+        G-Class, your dream Mercedes awaits.
+    </p>
 
-        <a href="inventory.html" class="btn">Explore Inventory</a>
-    </div>
+    <a href="#cars" class="btn">Explore Inventory</a>
+</div>
 
 </header>
 
-<section>
-    <h2>Featured Cars</h2>
+<section id="cars">
+    <h2>Featured Mercedes Vehicles</h2>
 
     <div class="grid">
 
@@ -188,32 +218,91 @@ section{
             <img src="images/car1.jpg">
             <h3>C-Class</h3>
             <p>$35,000</p>
+            <a href="#checkout" class="buy-btn">Buy Now</a>
         </div>
 
         <div class="card">
             <img src="images/car2.jpg">
             <h3>E-Class</h3>
             <p>$52,000</p>
+            <a href="#checkout" class="buy-btn">Buy Now</a>
         </div>
 
         <div class="card">
             <img src="images/car3.jpg">
             <h3>GLE</h3>
             <p>$70,000</p>
+            <a href="#checkout" class="buy-btn">Buy Now</a>
+        </div>
+
+        <div class="card">
+            <img src="images/car4.jpg">
+            <h3>S-Class</h3>
+            <p>$95,000</p>
+            <a href="#checkout" class="buy-btn">Buy Now</a>
+        </div>
+
+        <div class="card">
+            <img src="images/car5.jpg">
+            <h3>G-Class</h3>
+            <p>$140,000</p>
+            <a href="#checkout" class="buy-btn">Buy Now</a>
+        </div>
+
+        <div class="card">
+            <img src="images/car6.jpg">
+            <h3>AMG GT</h3>
+            <p>$160,000</p>
+            <a href="#checkout" class="buy-btn">Buy Now</a>
         </div>
 
     </div>
 </section>
 
-<script>
-let slides = document.querySelectorAll('.slide');
-let current = 0;
+<section id="checkout" class="checkout">
+    <h2>Checkout</h2>
 
-setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-}, 3000);
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="ghereyoma@gmail.com">
+        <input type="hidden" name="currency_code" value="USD">
+
+        <input type="text" name="customer_name" placeholder="Full Name" required>
+
+        <input type="email" name="customer_email" placeholder="Email Address" required>
+
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+
+        <textarea name="address" placeholder="Delivery Address"></textarea>
+
+        <select name="item_name">
+            <option>Mercedes C-Class - $35,000</option>
+            <option>Mercedes E-Class - $52,000</option>
+            <option>Mercedes GLE - $70,000</option>
+            <option>Mercedes S-Class - $95,000</option>
+            <option>Mercedes G-Class - $140,000</option>
+            <option>Mercedes AMG GT - $160,000</option>
+        </select>
+
+        <input type="number" name="amount" placeholder="Amount">
+
+        <button type="submit" class="pay-btn">
+            Pay with PayPal
+        </button>
+
+    </form>
+</section>
+
+<script>
+let slides=document.querySelectorAll('.slide');
+let current=0;
+
+setInterval(()=>{
+slides[current].classList.remove('active');
+current=(current+1)%slides.length;
+slides[current].classList.add('active');
+},3000);
 </script>
 
 </body>
